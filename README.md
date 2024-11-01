@@ -1,4 +1,4 @@
-# Polargraph-machine
+# Polargraph Machine
 
 ## Project Overview
 
