@@ -1,71 +1,66 @@
-# Polargraph Machine
+# Polargraph Drawing Machine
 
 ## Project Overview
 
-This project stimulates a software image to paint it on any surface (with any width and height) using electric stepper motors that generates discrete angular movement to move the wires that are attached with a pen and draws the image.
-The purpose of the polar drawing machine is that it could be used in education purposes and art schools in assisting the theachers by demonstrating any image, and the most important purpose of the project is that we can draw any image that we want on any surface with various dimensions.
+The Polargraph Drawing Machine is a programmable device that translates digital images into physical drawings on surfaces of any size, using stepper motors to control the movement of a pen via tensioned wires. This project is ideal for educational demonstrations, art installations, and interactive teaching, offering flexibility in drawing any image on various dimensions.
 
-Detailed Report: [here](./202104091545%20Plotter%20Drawing%20Robot-converted.pdf)
-
-Presentation: [here](./polargraph-final-presentation.pptx)
-
----
-
-## Components:
-
-    - Arduino MEGA.
-    - L293D Motor Drive Shield
-    - L293D Motor Drive IC
-    - 2 x 17 Stepper Motor
-    - Servo Motor MG90S
-    - GT2 Pulley 16 Teeth set
-    - 5M GT2 Rubber belt
-    - Power Supply (12v)
-    - Adapter 5V/3.5A
+For more details:
+- **[Detailed Report](./202104091545%20Plotter%20Drawing%20Robot-converted.pdf)**
+- **[Presentation](./polargraph-final-presentation.pptx)**
 
 ---
 
-## First Phase Goal:
-Draw a 1 color image on a specific white board.
+## Components
 
-### Steps:
-1. Selecting the plotter 3D design: [3D design](https://www.thingiverse.com/thing:2371117/files) and we used plastic for that
+- **Arduino MEGA**
+- **L293D Motor Drive Shield**
+- **L293D Motor Drive IC**
+- **2 x 17 Stepper Motors**
+- **MG90S Servo Motor**
+- **GT2 Pulley (16 Teeth)**
+- **5M GT2 Rubber Belt**
+- **12V Power Supply**
+- **5V/3.5A Adapter**
 
-    
-3. The wiring schematic: ![this is an image](https://github.com/NaNo211/Polargraph-machine/blob/main/Polargraph-scematic.png)
-   Connecting stepper motors and servo to the motor drive and attach it to the Arduino, then anttach the motors with rubber built. 
-   
-5. After selecting an image, we converted it to grey scale, then to SVG format.
-   
-4. Software used is called "processing". The link : https://processing.org 
-    Thanks for Euphy we used his code for the motors and servo controllers. The package link : https://github.com/euphy/polargraphcontroller/releases/tag/2017-11-01-20-30
-    We insert the the formatted image to the software, it then generates the vector path points and sends it to the microctroller.
+---
 
+## Project Phases
 
-### First Phase Output:
-![this is an image](./images/first_phase/2.jpeg)
+### Phase 1: Monochrome Image Drawing
+The goal of the first phase is to draw a single-color image on a specific surface.
 
+#### Steps:
+1. **Hardware Design**: Using the [3D plotter design](https://www.thingiverse.com/thing:2371117/files) on Thingiverse, printed in plastic.
+2. **Wiring Setup**: Connect stepper motors and the servo motor to the motor drive, attach the drive to the Arduino, and connect the motors using the rubber belt.  
+   ![Wiring Schematic](https://github.com/NaNo211/Polargraph-machine/blob/main/Polargraph-scematic.png)
+3. **Image Processing**: Convert the selected image to grayscale, then to SVG format.
+4. **Software**: Using [Processing](https://processing.org) software and Euphy's motor and servo controller code ([GitHub repository](https://github.com/euphy/polargraphcontroller/releases/tag/2017-11-01-20-30)), upload the SVG to generate vector path points and send these to the microcontroller.
 
-## Second Phase Goal:
- Draw a full color image on a specific white board. According to artistic drawing and printing a colored image is produced through merging a specific set of colors with different distributions according to the color intensities in a point, so referencing to the CMYK model, we merged 4 colored pens (Cyan, Magenta, Yellow, Magenta) to draw a full color image.
+#### Phase 1 Output:
+![Phase 1 Drawing Output](./images/first_phase/2.jpeg)
 
+---
 
-### Steps:
+### Phase 2: Full-Color Image Drawing
+In this phase, the objective is to draw a full-color image using four primary colors. By applying the CMYK model (Cyan, Magenta, Yellow, and Black), four pens are used to layer each color and create the final multicolor image.
 
-1. After selecting an image, we insert the image Death2Sharpie alogrithm to split it to CMYK channels.
-2. We attach the corresponding color pen of channel.
-3. We generate the SVG format of each layer.
-4. We insert the SVG for each layer to the processing software that generates the corresponging path.
-5. Printing each layer independently and manually changing pen and channel 4 times.
+#### Steps:
+1. **Image Splitting**: Use the Death2Sharpie algorithm to split the image into CMYK channels.
+2. **Pen Setup**: Attach a corresponding color pen for each channel.
+3. **SVG Generation**: Convert each color layer to SVG format.
+4. **Processing and Drawing**: Insert each SVG layer into Processing to generate the path, then print each layer individually, manually switching pens for each color.
 
-### Second Phase Output:
+#### Phase 2 Output:
+![Phase 2 Drawing Output](./images/second_phase/4.jpeg)
 
-![this is an image](./images/second_phase/4.jpeg)
+---
 
+## Future Enhancements
 
-## Updates:
-We are still updating the project as:
-we are willing to implement a scrpit that will automatically split channels of an image, convert it to SVG, and insert it to the processing software with the integration of a hardware design that will switch automatically between different color pens.
-The, we will integrate this project with the neural style transfer project.
+We aim to automate the image preparation and color channeling process. Upcoming features include:
 
+- **Automated Channel Splitting**: A script to automatically split images into CMYK channels, convert them to SVG, and feed them into Processing.
+- **Automatic Pen Switching**: Hardware integration to switch pens without manual intervention.
+- **Neural Style Transfer**: Incorporate neural style transfer to apply artistic styles to images before drawing.
 
+This project is evolving to offer greater automation, efficiency, and artistic possibilities.
