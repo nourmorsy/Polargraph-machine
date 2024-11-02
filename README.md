@@ -32,12 +32,13 @@ The goal of the first phase is to draw a single-color image on a specific surfac
 #### Steps:
 1. **Hardware Design**: Using the [3D plotter design](https://www.thingiverse.com/thing:2371117/files) on Thingiverse, printed in plastic.
 2. **Wiring Setup**: Connect stepper motors and the servo motor to the motor drive, attach the drive to the Arduino, and connect the motors using the rubber belt.  
-   ![Wiring Schematic](https://github.com/NaNo211/Polargraph-machine/blob/main/Polargraph-scematic.png)
-3. **Image Processing**: Convert the selected image to grayscale, then to SVG format.
-4. **Software**: Using [Processing](https://processing.org) software and Euphy's motor and servo controller code ([GitHub repository](https://github.com/euphy/polargraphcontroller/releases/tag/2017-11-01-20-30)), upload the SVG to generate vector path points and send these to the microcontroller.
+   <img src="./Polargraph-scematic.png" alt="scematic" width="500">
+
+4. **Image Processing**: Convert the selected image to grayscale, then to SVG format.
+5. **Software**: Using [Processing](https://processing.org) software and Euphy's motor and servo controller code ([GitHub repository](https://github.com/euphy/polargraphcontroller/releases/tag/2017-11-01-20-30)), upload the SVG to generate vector path points and send these to the microcontroller.
 
 #### Phase 1 Output:
-![Phase 1 Drawing Output](./images/first_phase/2.jpeg)
+<img src="./images/first_phase/2.jpeg" alt="1" width="500">
 
 ---
 
@@ -51,7 +52,8 @@ In this phase, the objective is to draw a full-color image using four primary co
 4. **Processing and Drawing**: Insert each SVG layer into Processing to generate the path, then print each layer individually, manually switching pens for each color.
 
 #### Phase 2 Output:
-![Phase 2 Drawing Output](./images/second_phase/4.jpeg)
+
+<img src="./images/second_phase/4.jpeg" alt="1" width="500">
 
 ---
 
